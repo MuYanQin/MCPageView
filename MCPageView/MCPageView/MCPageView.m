@@ -215,10 +215,10 @@ static const NSInteger itemTag = 100;
         self.lastItem.titleLabel.font = self.defaultTitleFont ?self.defaultTitleFont:[UIFont systemFontOfSize:14];
         [self.lastItem setTitleColor:self.defaultTitleColor ?self.defaultTitleColor:itemDefaultColor forState:UIControlStateNormal];
         self.lastItem.transform = CGAffineTransformMakeScale(1,1);
-        
+
     }
     Item.transform = CGAffineTransformMakeScale(1+ scale,1+ scale);
-    
+
     self.lastIndex = index;
     self.lastItem = Item;
     Item.titleLabel.font = self.selectTitleFont ?self.selectTitleFont:[UIFont systemFontOfSize:14];
@@ -263,12 +263,12 @@ static const NSInteger itemTag = 100;
 - (void)setMarginToLfet:(CGFloat)marginToLfet
 {
     _marginToLfet = marginToLfet;
-    self.titleScroll.frame = CGRectMake(_marginToLfet, _marginToRight, KScreenWidth  - _marginToRight - _marginToLfet, self.titleScrollHeight);
+    self.titleScroll.frame = CGRectMake(_marginToLfet, _marginToRight, kwidth  - _marginToRight - _marginToLfet, self.titleScrollHeight);
 }
 - (void)setMarginToRight:(CGFloat)marginToRight
 {
     _marginToRight = marginToRight;
-    self.titleScroll.frame = CGRectMake(_marginToLfet, _marginToRight, KScreenWidth  - _marginToRight - _marginToLfet, self.titleScrollHeight);
+    self.titleScroll.frame = CGRectMake(_marginToLfet, _marginToRight, kwidth  - _marginToRight - _marginToLfet, self.titleScrollHeight);
 }
 /**设置选中title字体*/
 - (void)setSelectTitleFont:(UIFont *)selectTitleFont
@@ -338,7 +338,7 @@ static const NSInteger itemTag = 100;
         return;
     }
     _titleButtonWidth = titleButtonWidth;
-    
+
     //如果给的宽度与title个数乘积小于屏幕宽度
     if ((_titleButtonWidth *_contentTitles.count) >kwidth) {
         self.titleScroll.contentSize = CGSizeMake((_titleButtonWidth *_contentTitles.count), self.titleScrollHeight);

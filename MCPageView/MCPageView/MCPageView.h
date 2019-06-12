@@ -17,8 +17,8 @@
 @property (nonatomic , assign) id<MCPageViewDelegate>  delegate;
 
 /**
- 右边距离屏幕的距离 默认0
- */
+右边距离屏幕的距离 默认0
+*/
 @property (nonatomic , assign) CGFloat  marginToRight;
 
 /**
@@ -88,7 +88,7 @@
 
 /**
  可选 手动选中某个iem
- 
+
  @param index item下标
  */
 - (void)selectIndex:(NSInteger)index;
