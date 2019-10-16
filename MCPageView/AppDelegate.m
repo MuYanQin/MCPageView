@@ -17,7 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[MCPageViewViewController new]];
+    MCPageViewViewController *pageVC = [MCPageViewViewController new];
+    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:pageVC];
     return YES;
 }
 
