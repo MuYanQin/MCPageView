@@ -24,7 +24,6 @@
 @property (nonatomic , strong) UIColor *netxColor ;
 @property (nonatomic , assign) BOOL  isClick;
 @property (nonatomic , assign) NSInteger  lastIndex;
-@property (nonatomic , assign) NSInteger  index;
 @end
 
 static const NSInteger itemTag = 100;
@@ -213,7 +212,6 @@ static const NSInteger itemTag = 100;
         NSLog(@"滚动的位置大于条目数");
         return;
     }
-    _index = index;
     self.isClick = YES;
     [self changeItemStatus:index];
     [self.contentCollection scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:labs(index) inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
@@ -494,6 +492,7 @@ static const NSInteger itemTag = 100;
                 [weakSelf.titleScroll addSubview:item];
                 
                 
+                [weakSelf.titleScroll addConstraint:[NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:weakSelf.titleScroll attribute:NSLayoutAttributeTop multiplier:1 constant:0]];
                 [weakSelf.titleScroll addConstraint:[NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:weakSelf.titleScroll attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0]];
                 [weakSelf.titleScroll addConstraint:[NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:weakSelf.titleScroll attribute:NSLayoutAttributeLeft multiplier:1 constant:idx *weakSelf.titleButtonWidth]];
                 
