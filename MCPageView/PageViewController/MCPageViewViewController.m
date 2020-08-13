@@ -34,17 +34,21 @@
     [titles addObject:@"标题三"];
 
     self.PageView = [[MCPageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height) titles:titles controllers:controllers];
+//    [self.PageView selectIndex:2];
+
+    self.PageView.titleViewHeight = 30;
+
     self.PageView.titleButtonWidth = 60;
-    self.PageView.titleViewHeight = 40;
-    self.PageView.selectTitleFont = [UIFont boldSystemFontOfSize:16];
-    self.PageView.defaultTitleFont = [UIFont boldSystemFontOfSize:16];
-    self.PageView.defaultTitleColor = [UIColor redColor];
-    self.PageView.selectTitleColor = [UIColor purpleColor];
-    [self.PageView setBadgeWithIndex:3 badge:0];
-    [self.PageView setBadgeWithIndex:1 badge:58];
-    [self.PageView setBadgeWithIndex:5 badge:-1];
-    [self.PageView setBadgeWithIndex:2 badge:1000];
+//    self.PageView.selectTitleFont = [UIFont boldSystemFontOfSize:16];
+//    self.PageView.defaultTitleFont = [UIFont boldSystemFontOfSize:16];
+//    self.PageView.defaultTitleColor = [UIColor redColor];
+//    self.PageView.selectTitleColor = [UIColor purpleColor];
+//    [self.PageView setBadgeWithIndex:3 badge:0];
+//    [self.PageView setBadgeWithIndex:1 badge:58];
+//    [self.PageView setBadgeWithIndex:5 badge:-1];
+//    [self.PageView setBadgeWithIndex:2 badge:1000];
     [self.view addSubview:self.PageView];
+
 }
 
 - (void)didReceiveMemoryWarning {

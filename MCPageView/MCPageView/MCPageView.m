@@ -23,9 +23,8 @@
 @property (nonatomic , assign) CGFloat  defaultR,defaultG,defaultB,defaultA,selectedR,selectedG,selectedB,selectedA;
 @property (nonatomic , strong) UIColor *netxColor ;
 @property (nonatomic , assign) BOOL  isClick;
-
 @property (nonatomic , assign) NSInteger  lastIndex;
-
+@property (nonatomic , assign) NSInteger  index;
 @end
 
 static const NSInteger itemTag = 100;
@@ -51,6 +50,7 @@ static const NSInteger itemTag = 100;
     return self;
 }
 - (void)buidParamAndUI{
+    self.backgroundColor = [UIColor whiteColor];
     self.itemArray = [NSMutableArray array];
     _defaultTitleColor = [UIColor grayColor];
     _selectTitleColor = [UIColor blackColor];
@@ -77,6 +77,7 @@ static const NSInteger itemTag = 100;
 {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MCContent" forIndexPath:indexPath];
     cell.highlighted = NO;
+    cell.backgroundColor = [UIColor whiteColor];
     return cell;
 }
 //将要加载某个Item时调用的方法
@@ -212,11 +213,21 @@ static const NSInteger itemTag = 100;
         NSLog(@"滚动的位置大于条目数");
         return;
     }
+    _index = index;
     self.isClick = YES;
     [self changeItemStatus:index];
     [self.contentCollection scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:labs(index) inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
     [self scrollToItemCenter:self.itemArray[index]];
 }
+- (void)setTitleViewHeight:(CGFloat)titleViewHeight
+{
+    _titleViewHeight = titleViewHeight;
+    self.titleScroll.height = self.titleViewHeight;
+    self.contentCollection.top = self.titleScroll.bottom;
+    self.contentCollection.height = self.height - self.titleScroll.bottom;
+    self.lineView.top  = self.titleViewHeight - 1;
+}
+
 - (void)setBadgeWithIndex:(NSInteger)index badge:(NSInteger)badge
 {
     if (index <0 || index >= self.itemArray.count) {
@@ -375,16 +386,7 @@ static const NSInteger itemTag = 100;
     _canSlide = canSlide;
     self.contentCollection.scrollEnabled = canSlide;
 }
-- (void)setTitleViewHeight:(CGFloat)titleViewHeight
-{
-    _titleViewHeight = titleViewHeight;
-    [self setNeedsLayout];
-}
-- (void)layoutSubviews
-{
-    self.titleScroll.frame = CGRectMake(_marginToLfet, 0, kwidth  - _marginToRight - _marginToLfet, self.titleViewHeight);
-    self.contentCollection.frame =  CGRectMake(0, self.titleScroll.bottom, kwidth, self.height - self.titleScroll.bottom);
-}
+
 /**设置选中titlebtn的宽度*/
 - (void)setTitleButtonWidth:(CGFloat)titleButtonWidth
 {
