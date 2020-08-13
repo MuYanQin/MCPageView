@@ -36,6 +36,7 @@
     self.PageView = [[MCPageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height) titles:titles controllers:controllers];
 
     self.PageView.titleViewHeight = 30;
+    //需在titleViewHeight后调用此方法 原因见titleViewHeight方法属性注释
     [self.PageView selectIndex:2];
 
     self.PageView.titleButtonWidth = 60;
