@@ -7,7 +7,7 @@
 //
 
 #import "MCPageViewSub1ViewController.h"
-
+#import "MCPageViewSub2ViewController.h"
 @interface MCPageViewSub1ViewController ()
 
 @end
@@ -21,8 +21,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor redColor];
+    UIButton *button  = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [button addTarget:self action:@selector(buttonClick) forControlEvents:(UIControlEventTouchUpInside)];
+    button.frame = CGRectMake(100, 100, 100, 100);
+    button.backgroundColor = [UIColor cyanColor];
+    [self.view addSubview:button];
 }
-
+- (void)buttonClick{
+    
+    [self.navigationController pushViewController:[MCPageViewSub2ViewController new] animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

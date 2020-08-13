@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42E0015924E4C8ED0070FDBB /* QYBadgeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E0015824E4C8ED0070FDBB /* QYBadgeLabel.m */; };
 		4BAF3DC9224863D800F3B4EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF3DC8224863D800F3B4EB /* AppDelegate.m */; };
 		4BAF3DCF224863D800F3B4EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BAF3DCD224863D800F3B4EB /* Main.storyboard */; };
 		4BAF3DD1224863D900F3B4EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BAF3DD0224863D900F3B4EB /* Assets.xcassets */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42E0015724E4C8ED0070FDBB /* QYBadgeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYBadgeLabel.h; sourceTree = "<group>"; };
+		42E0015824E4C8ED0070FDBB /* QYBadgeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYBadgeLabel.m; sourceTree = "<group>"; };
 		4BAF3DC4224863D800F3B4EB /* MCPageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCPageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BAF3DC7224863D800F3B4EB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4BAF3DC8224863D800F3B4EB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 				4BAF3DFD2248643500F3B4EB /* UIView+QQFrame.m */,
 				4BAF3DFA224863F500F3B4EB /* MCPageView.h */,
 				4BAF3DFB224863F500F3B4EB /* MCPageView.m */,
+				42E0015724E4C8ED0070FDBB /* QYBadgeLabel.h */,
+				42E0015824E4C8ED0070FDBB /* QYBadgeLabel.m */,
 			);
 			path = MCPageView;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 				4BAF3DFF2248643500F3B4EB /* UIView+QQFrame.m in Sources */,
 				4BAF3E0C2248645A00F3B4EB /* MCPageViewViewController.m in Sources */,
 				4BAF3E092248645A00F3B4EB /* MCPageViewSub3ViewController.m in Sources */,
+				42E0015924E4C8ED0070FDBB /* QYBadgeLabel.m in Sources */,
 				4BAF3DC9224863D800F3B4EB /* AppDelegate.m in Sources */,
 				4BAF3DFC224863F500F3B4EB /* MCPageView.m in Sources */,
 			);
